@@ -28,9 +28,10 @@ function App() {
       {
         method: "POST",
         headers: {
+          //tells the server what type of data you're sending in the request
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ todo: name }),
+        body: JSON.stringify({ todo: name }), //convert the data to JSON format
       },
     );
 
@@ -55,10 +56,12 @@ function App() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button type="submit" className="todo-add-button">Create Todo</button>
+        <button type="submit" className="todo-add-button">
+          Create Todo
+        </button>
       </form>
 
-    <Todo todos={todos} setTodos={setTodos}/>
+      <Todo todos={todos} setTodos={setTodos} />
     </div>
   );
 }
